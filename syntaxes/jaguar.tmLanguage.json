@@ -1,0 +1,20 @@
+{
+  "$schema":"https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name":"Jaguar",
+  "scopeName":"source.jaguar",
+  "patterns":[
+    {"include":"#comments"},{"include":"#preprocessor"},{"include":"#strings"},{"include":"#numbers"},{"include":"#keywords"},{"include":"#types"},{"include":"#access"},{"include":"#functions"},{"include":"#namespace"},{"include":"#operators"}
+  ],
+  "repository":{
+    "comments":{"patterns":[{"name":"comment.line.double-slash.jaguar","match":"//.*$"},{"name":"comment.block.jaguar","begin":"/\\*","end":"\\*/"}]},
+    "preprocessor":{"patterns":[{"name":"meta.preprocessor.jaguar","match":"^\\s*#(?:define|undef|if|ifdef|ifndef|elif|elseif|else|endif|pragma|error|warning|line)\\b.*$"}]},
+    "strings":{"patterns":[{"name":"string.quoted.double.jaguar","begin":"\"","end":"\"","patterns":[{"name":"constant.character.escape.jaguar","match":"\\\\."}]}]},
+    "numbers":{"patterns":[{"name":"constant.numeric.float.jaguar","match":"\\b(?:\\d+\\.\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?\\b"},{"name":"constant.numeric.integer.jaguar","match":"\\b\\d+\\b"}]},
+    "keywords":{"patterns":[{"name":"keyword.control.jaguar","match":"\\b(?:if|else|while|for_loop|return|break|continue)\\b"},{"name":"storage.type.class.jaguar","match":"\\b(?:class|struct|namespace|using)\\b"},{"name":"storage.modifier.jaguar","match":"\\b(?:const|virtual|override|constr|destr|signal|new|auto)\\b"},{"name":"constant.language.jaguar","match":"\\b(?:true|false)\\b"}]},
+    "types":{"patterns":[{"name":"support.type.jaguar","match":"\\b(?:void|bool|char|uchar|short|ushort|int|uint|long|ulong|float|double|i8|u8|i16|u16|i32|u32|i64|u64|f32|f64|string|cptr|cstr|cfuncptr)\\b"},{"name":"support.type.generic.jaguar","match":"\\b(?:list|map|container|dynamic_list|pair|loop_list|loop_map)\\b"}]},
+    "access":{"patterns":[{"name":"storage.modifier.access.jaguar","match":"[\\$%]"}]},
+    "functions":{"patterns":[{"name":"entity.name.function.jaguar","match":"\\b[A-Za-z_]\\w*(?=\\s*\\()"}]},
+    "namespace":{"patterns":[{"name":"entity.name.namespace.jaguar","match":"\\b[A-Za-z_]\\w*(?=\\s*:)"}]},
+    "operators":{"patterns":[{"name":"keyword.operator.jaguar","match":"=>|==|!=|<=|>=|&&|\\|\\||[+\\-*/%=<>!&.]"}]}
+  }
+}
